@@ -69,7 +69,7 @@ export PATH=$PATH:/usr/local/i386elfgcc/bin
 6. QEMU - Установите так:
 `sudo apt install qemu-kvm qemu`
 
-# Загрузка, сборка и запуск
+#Загрузка, сборка и запуск
 1. Скачиваем все инструменты выше.
 2. (В идеале получаем рут права)
 3. Скачиваем само ядро `git clone https://github.com/dmitriykotik/Sylux.git`
@@ -86,3 +86,5 @@ export PATH=$PATH:/usr/local/i386elfgcc/bin
 > [!WARNING]
 > Официальный сборщик ядра доступен только на Линукс, так что обращайте внимание на регистер слов!
 
+> [!NOTE]
+> Если у вас не получается скомпилировать ядро, или хотите сообщить о баге, то напишите мне на почту: `multiplayerdeveloper@gmail.com`
