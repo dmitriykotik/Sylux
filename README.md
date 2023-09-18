@@ -69,7 +69,7 @@ export PATH=$PATH:/usr/local/i386elfgcc/bin
 6. QEMU - Установите так:
 `sudo apt install qemu-kvm qemu`
 
-#Загрузка, сборка и запуск
+# Загрузка, сборка и запуск
 1. Скачиваем все инструменты выше.
 2. (В идеале получаем рут права)
 3. Скачиваем само ядро `git clone https://github.com/dmitriykotik/Sylux.git`
