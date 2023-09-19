@@ -58,7 +58,7 @@
 
 # Необходимые инструменты
 1. Linux (возможно, можно любой, но ядро собирается на kali linux полной сборки [Kali Linux | Everything](https://www.kali.org/get-kali/#kali-installer-images))
-2. i386-elf-4.9.1-Linux-x86_64 - Скачайте от сюда: https://disk.yandex.ru/d/eKocqL4wd-IfMg и переместите папку `itm` в папку `./build`. Если ссылка по каким либо причинам не работает, то загрузите компилятор вручную:
+2. i386-elf-4.9.1-Linux-x86_64 - Скачайте от [сюда](https://disk.yandex.ru/d/eKocqL4wd-IfMg). Из архива переместите папку `itm` в папку `./build`. Если ссылка по каким либо причинам не работает, то загрузите компилятор вручную:
 ```
 wget http://newos.org/toolchains/i386-elf-4.9.1-Linux-x86_64.tar.xz
 mkdir /usr/local/i386elfgcc
