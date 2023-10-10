@@ -53,9 +53,7 @@
 2. i386-elf-4.9.1-Linux-x86_64 - Скачайте от [сюда](https://disk.yandex.ru/d/eKocqL4wd-IfMg). Из архива переместите папку `itm` в папку `./build`. Если ссылка по каким либо причинам не работает, то загрузите компилятор вручную:
 ```
 wget http://newos.org/toolchains/i386-elf-4.9.1-Linux-x86_64.tar.xz
-mkdir /usr/local/i386elfgcc
-tar -xf i386-elf-4.9.1-Linux-x86_64.tar.xz -C /usr/local/i386elfgcc --strip-components=1
-export PATH=$PATH:/usr/local/i386elfgcc/bin
+tar -xf i386-elf-4.9.1-Linux-x86_64.tar.xz -C /path/to/folder/build --strip-components=1
 ```
 3. GCC => В комплекте c i386-elf-4.9.1-Linux-x86_64
 4. LD => В комплекте c i386-elf-4.9.1-Linux-x86_64
