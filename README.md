@@ -8,10 +8,12 @@
 
 > Автор: Плюха (Дмитрий Некраш) - https://www.youtube.com/@pluhaoff/
 
-# Начало работы
-Перед началом работы с ядром, пожалуйста, посмотрите документацию.
+# Создание ОС на ядре Sylux
+Перед началом работы с ядром, осзнакомьтесь с документацией. Вот пункты с которыми вы можете ознакомиться: [Означение файлов и структура Sylux](https://github.com/dmitriykotik/Sylux/tree/main#%D0%BE%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2-%D0%B8-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-sylux); [Необходимые инструменты](https://github.com/dmitriykotik/Sylux/tree/main#%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D0%B5-%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B); [Загрузка, сборка и запуск](https://github.com/dmitriykotik/Sylux/tree/main#%D0%B7%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D1%81%D0%B1%D0%BE%D1%80%D0%BA%D0%B0-%D0%B8-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA); [Документация на текущие драйвера](https://github.com/dmitriykotik/Sylux/tree/main#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D1%82%D0%B5%D0%BA%D1%83%D1%89%D0%B8%D0%B5-%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80%D0%B0)
 
 После скачайте все необходимые [пакеты](https://github.com/dmitriykotik/Sylux/tree/main#%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D0%B5-%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B).
+
+
 
 # Означение файлов и структура Sylux
 - boot [folder] - Загрузчик ядра
