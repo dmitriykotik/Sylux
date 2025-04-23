@@ -16,7 +16,7 @@ sudo wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 sudo bash dotnet-install.sh --channel 9.0
 rm dotnet-install.sh
 echo "Installing Make for Sylux..."
-sudo wget https://github.com/dmitriykotik/Sylux-Maker/releases/download/v0.1.1.41/Make
+sudo wget https://github.com/dmitriykotik/Sylux-Maker/releases/download/v0.1.1.61/Make
 sudo chmod +x ./Make
 echo "Downloading additional packages..."
 ./Make install_i686

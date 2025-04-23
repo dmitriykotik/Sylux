@@ -11,7 +11,7 @@
 ; Specify the path to the compiler. If you have not installed the compiler, you can install it,
 ; as well as other necessary packages, using the ./Make install_i686 command
 [Compiler]
-i686-elf-tools = i686-elf-tools/bin/
+i686-elf-tools = i686-elf-tools
 
 ; Make sure that the qemu folder you specify contains tools such as: qemu-system-x86_64.
 ; If the tools can be used without specifying the full path, leave this field blank
@@ -29,30 +29,27 @@ iso = sylux.iso
 ; Enter the identifier for your variable, and after through the equals sign, enter the value without the quotation marks.
 ; You can then use this variable as follows: %your_variable%
 [Vars]
-gcc = i686-elf-gcc
-as = i686-elf-as
-boot_path = boot/boot
-kernel_path = kernel/kernel
+gcc = bin/i686-elf-gcc
+as = bin/i686-elf-as
 linker = linker/linker.ld
 
 ; Assembly Section.
 ; Specify the number of commands to be executed, and name the variables with these commands in numerical order (i.e. 1, 2, 3, etc.). The countdown starts at 1.
 ; While compiling with grub-mkrescue make sure you have the xorriso package installed, if not you can install it with ./Make install_i686
 [Build]
-Count = 13
+Count = 12
 1 = echo -= Assembly... =-
 2 = echo Clearing...
 3 = ./Make clean
 4 = echo Assembling boot...
-5 = ./%i686-elf-tools%/%as% %boot_path%.s -o %boot_path%.o
+5 = ./%i686-elf-tools%/%as% boot/boot.s -o boot/boot.o
 6 = echo Assembling kernel...
-7 = ./%i686-elf-tools%/%gcc% -c %kernel_path%.c -o %kernel_path%.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-8 = ./%i686-elf-tools%/%gcc% -c drivers/vga.c -o drivers/vga.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-9 = echo Linking...
-10 = ./%i686-elf-tools%/%gcc% -T %linker% -o %bin% -ffreestanding -O2 -nostdlib %boot_path%.o %kernel_path%.o drivers/vga.o
-11 = echo Creating an image with GRUB boot loader...
-12 = grub-mkrescue -o %iso% build/
-13 = echo -= Assembly complete! =-
+7 = foreach gcc ./%i686-elf-tools%/%gcc% -c %*%.c -o %*%.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+8 = echo Linking...
+9 = foreach ld ./%i686-elf-tools%/%gcc% -T %linker% -o %bin% -ffreestanding -O2 -nostdlib %*%
+10 = echo Creating an image with GRUB boot loader...
+11 = grub-mkrescue -o %iso% build/
+12 = echo -= Assembly complete! =-
 
 ; Launch Section.
 ; Specify the number of commands to be executed, and name the variables with these commands in numerical order (i.e. 1, 2, 3, etc.). The countdown starts at 1.
@@ -67,9 +64,7 @@ Count = 2
 Count = 7
 1 = echo -= Clearing... =-
 2 = echo Deleting assembly files...
-3 = rm %boot_path%.o
-4 = rm %kernel_path%.o
+3 = foreach output rm %*%.o
 5 = rm %bin%
 6 = rm %iso%
-7 = rm drivers/vga.o
 8 = echo -= Cleanup complete! =-
