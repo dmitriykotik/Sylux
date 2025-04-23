@@ -1,6 +1,6 @@
 #include "Console.h"
-#include "../include/Keyboard.h"
-#include "../lib/IO.h"
+#include "Keyboard.h"
+#include "../include/io.h"
 
 #define CONSOLE_WIDTH 80
 #define CONSOLE_HEIGHT 25

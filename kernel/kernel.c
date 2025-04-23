@@ -1,6 +1,6 @@
 #include <stdbool.h>
 #include "../drivers/Console.h"
-#include "../lib/string.h"
+#include "../include/string.h"
 
 void kernel_main(void) {
     WriteLine("Starting Sylux...");

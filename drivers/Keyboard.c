@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include <stdbool.h>
-#include "../lib/IO.h"
+#include "../include/io.h"
 
 #define KEYBOARD_DATA_PORT 0x60
 #define KEYBOARD_CMD_PORT  0x64
