@@ -39,7 +39,7 @@ linker = linker/linker.ld
 ; Specify the number of commands to be executed, and name the variables with these commands in numerical order (i.e. 1, 2, 3, etc.). The countdown starts at 1.
 ; While compiling with grub-mkrescue make sure you have the xorriso package installed, if not you can install it with ./Make install_i686
 [Build]
-Count = 12
+Count = 13
 1 = echo -= Assembly... =-
 2 = echo Clearing...
 3 = ./Make clean
@@ -47,11 +47,12 @@ Count = 12
 5 = ./%i686-elf-tools%/%as% %boot_path%.s -o %boot_path%.o
 6 = echo Assembling kernel...
 7 = ./%i686-elf-tools%/%gcc% -c %kernel_path%.c -o %kernel_path%.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
-8 = echo Linking...
-9 = ./%i686-elf-tools%/%gcc% -T %linker% -o %bin% -ffreestanding -O2 -nostdlib %boot_path%.o %kernel_path%.o
-10 = echo Creating an image with GRUB boot loader...
-11 = grub-mkrescue -o %iso% build/
-12 = echo -= Assembly complete! =-
+8 = ./%i686-elf-tools%/%gcc% -c drivers/vga.c -o drivers/vga.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+9 = echo Linking...
+10 = ./%i686-elf-tools%/%gcc% -T %linker% -o %bin% -ffreestanding -O2 -nostdlib %boot_path%.o %kernel_path%.o drivers/vga.o
+11 = echo Creating an image with GRUB boot loader...
+12 = grub-mkrescue -o %iso% build/
+13 = echo -= Assembly complete! =-
 
 ; Launch Section.
 ; Specify the number of commands to be executed, and name the variables with these commands in numerical order (i.e. 1, 2, 3, etc.). The countdown starts at 1.
@@ -70,4 +71,5 @@ Count = 7
 4 = rm %kernel_path%.o
 5 = rm %bin%
 6 = rm %iso%
-7 = echo -= Cleanup complete! =-
+7 = rm drivers/vga.o
+8 = echo -= Cleanup complete! =-
