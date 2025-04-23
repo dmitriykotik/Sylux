@@ -40,13 +40,12 @@ char ReadChar() {
     while (true) {
         uint8_t sc = InByte(KEYBOARD_DATA_PORT);
 
-        if (sc == lastScancode) continue; // игнор повторов
+        if (sc == lastScancode) continue;
         lastScancode = sc;
 
         bool released = sc & 0x80;
         uint8_t code = sc & 0x7F;
 
-        // Модификаторы
         if (code == 42 || code == 54) { shift = !released; continue; }
         if (code == 58 && !released) {
             capslock = !capslock;
@@ -54,7 +53,6 @@ char ReadChar() {
             continue;
         }
 
-        // Только нажатия
         if (!released) {
             char ch = GetChar(code, shift, capslock);
             if (ch) return ch;
